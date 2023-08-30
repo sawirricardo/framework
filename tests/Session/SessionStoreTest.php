@@ -2,22 +2,22 @@
 
 namespace Illuminate\Tests\Session;
 
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Cookie\CookieJar;
 use Illuminate\Session\CookieSessionHandler;
 use Illuminate\Session\Store;
+use Illuminate\Support\Stringable;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Str;
 use Illuminate\Support\ViewErrorBag;
+use Illuminate\Tests\Session\TestEnum;
+use InvalidArgumentException;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use SessionHandlerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Stringable;
-use InvalidArgumentException;
-use Illuminate\Tests\Session\TestEnum;
 
 class SessionStoreTest extends TestCase
 {
