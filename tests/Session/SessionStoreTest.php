@@ -672,14 +672,12 @@ class SessionStoreTest extends TestCase
         $this->assertEquals(['users' => [1, 2, 3]], $session->collect('test_collect')->all());
 
         $session->put('test_collect', ['text-payload']);
-        $request = Request::create('/', 'GET', ['text-payload']);
         $this->assertEquals(['text-payload'], $session->collect('test_collect')->all());
 
         $session->put('test_collect', ['email' => 'test@example.com']);
         $this->assertEquals(['test@example.com'], $session->collect('test_collect.email')->all());
 
         $session->put('test_collect', []);
-        $request = Request::create('/', 'GET', []);
         $this->assertInstanceOf(Collection::class, $session->collect('test_collect'));
         $this->assertTrue($session->collect()->isEmpty());
 
